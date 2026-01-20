@@ -1,10 +1,12 @@
 package Model;
 
-public abstract class User {
-    String name;
-    String email;
-    String pass;
-    User(String name,String email,String pass)
+import java.io.Serializable;
+
+public abstract class User implements Serializable {
+    protected String name;
+    protected String email;
+    protected String pass;
+    public User(String name,String email,String pass)
     {
         this.name=name;
         this.email=email;

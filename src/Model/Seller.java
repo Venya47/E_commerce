@@ -1,11 +1,12 @@
 package Model;
 
-public class Seller extends User{
-    static int  seller_id_generator=1;
+import java.io.Serializable;
+
+public class Seller extends User implements Serializable {
     private int seller_id;
-    Seller(String name,String email,String pass) {
+    Seller(int s_id,String name,String email,String pass) {
         super(name,email,pass);
-        seller_id=seller_id_generator++;
+        seller_id=s_id;
     }
     public int getSeller_id() {
         return seller_id;

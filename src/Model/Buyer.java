@@ -1,12 +1,11 @@
 package Model;
+import java.io.Serializable;
 import java.util.*;
-public class Buyer extends User{
-    Scanner scan=new Scanner(System.in);
-    static int  buyer_id_generator=1;
+public class Buyer extends User implements Serializable {
     private int buyer_id;
-    Buyer(String name,String email,String pass) {
+    Buyer(int b_id,String name,String email,String pass) {
         super(name,email,pass);
-        buyer_id=buyer_id_generator++;
+        buyer_id=b_id;
     }
     public int getBuyer_id() {
         return buyer_id;

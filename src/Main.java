@@ -8,10 +8,10 @@ public class Main {
         int option=0;
         while(option!=7) {
             switch(option) {
-                case 1: admin.buyerSignUp();break;
-                case 2: admin.buyerSignIn().showActions();break;
-                case 3: admin.sellerSignUp();break;
-                case 4: admin.sellerSignIn().showActions();break;
+                case 1: admin.buyerSignUp(scan);break;
+                case 2: admin.buyerSignIn(scan).showActions();break;
+                case 3: admin.sellerSignUp(scan);break;
+                case 4: admin.sellerSignIn(scan).showActions();break;
                 case 5: admin.showBuyers();break;
                 case 6: admin.showSellers();break;
             }
@@ -32,6 +32,7 @@ public class Main {
             System.out.println("Loading Admin from file...");
             return (Admin) ois.readObject();
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Error reading file. Creating new Admin...");
             return new Admin();
         }
